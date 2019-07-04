@@ -77,7 +77,10 @@ class TNCProxy(object):
                     return
 
     def format_for_print(self, message):
+        if not isinstance(message, str):
+            message = message.decode()
         return "".join([c if c.isalnum() else "%%%02x" % ord(c) for c in message])
+
 
     # remove connection
     def remove(self, connection):
