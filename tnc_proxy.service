@@ -1,0 +1,11 @@
+[Unit]
+Description=tnx proxy
+Documentation=man:direwolf
+
+[Service]
+User=direwolf
+SupplementaryGroups=dialout
+ExecStart=/usr/bin/python3 /opt/tnc-proxy/tnc_proxy.py
+
+[Install]
+WantedBy=multi-user.target
