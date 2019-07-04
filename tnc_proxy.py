@@ -78,7 +78,7 @@ class TNCProxy(object):
 
     def format_for_print(self, message):
         if not isinstance(message, str):
-            message = message.decode()
+            message = message.decode('utf-8', errors='ignore')
         return "".join([c if c.isalnum() else "%%%02x" % ord(c) for c in message])
 
 
